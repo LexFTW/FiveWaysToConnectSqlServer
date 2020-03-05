@@ -10,14 +10,21 @@ namespace SqlCodeInCSharp
         {
             Program programObj = new Program();
             programObj.InsertExample();
-            programObj.SelectExample();
             programObj.UpdateExample();
             programObj.DeleteExample();
+            programObj.SelectExample();
         }
 
         private void DeleteExample()
         {
-            throw new NotImplementedException();
+            Connection connection = new Connection();
+            connection.OpenConnection();
+
+            CommandSql command = new CommandSql(Resources.sqlQueryDelete, connection);
+            command.Command.Parameters.AddWithValue("@studentId", 1);
+            command.Command.ExecuteNonQuery();
+
+            connection.CloseConnection();
         }
 
         private void UpdateExample()

@@ -79,6 +79,15 @@ namespace SqlCodeInCSharp.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a DELETE FROM Student WHERE StudentId = @studentId.
+        /// </summary>
+        internal static string sqlQueryDelete {
+            get {
+                return ResourceManager.GetString("sqlQueryDelete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a INSERT Student (name, surname, birthday) VALUES(@studentName, @studentSurname, CURRENT_TIMESTAMP).
         /// </summary>
         internal static string sqlQueryInsert {

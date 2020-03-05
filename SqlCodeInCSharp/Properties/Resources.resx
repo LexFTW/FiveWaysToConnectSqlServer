@@ -126,4 +126,7 @@
   <data name="sqlQueryInsert" xml:space="preserve">
     <value>INSERT Student (name, surname, birthday) VALUES(@studentName, @studentSurname, CURRENT_TIMESTAMP)</value>
   </data>
+  <data name="sqlQueryUpdate" xml:space="preserve">
+    <value>UPDATE Student SET name = @studentName WHERE StudentId = @studentId</value>
+  </data>
 </root>

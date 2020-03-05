@@ -22,7 +22,15 @@ namespace SqlCodeInCSharp
 
         private void UpdateExample()
         {
-            throw new NotImplementedException();
+            Connection connection = new Connection();
+            connection.OpenConnection();
+
+            CommandSql command = new CommandSql(Resources.sqlQueryUpdate, connection);
+            command.Command.Parameters.AddWithValue("@studentName", "Alexis Update");
+            command.Command.Parameters.AddWithValue("@studentId", 1);
+            command.Command.ExecuteNonQuery();
+
+            connection.CloseConnection();
         }
 
         private void InsertExample()
@@ -33,10 +41,6 @@ namespace SqlCodeInCSharp
             CommandSql command = new CommandSql(Resources.sqlQueryInsert, connection);
             command.Command.Parameters.AddWithValue("@studentName", "Alexis");
             command.Command.Parameters.AddWithValue("@studentSurname", "Mengual Vázquez");
-            command.Command.ExecuteNonQuery();
-
-            command.Command.Parameters.AddWithValue("@studentName", "Sonia");
-            command.Command.Parameters.AddWithValue("@studentSurname", "Arenas");
             command.Command.ExecuteNonQuery();
 
             connection.CloseConnection();

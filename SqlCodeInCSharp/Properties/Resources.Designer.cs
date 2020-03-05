@@ -86,5 +86,14 @@ namespace SqlCodeInCSharp.Properties {
                 return ResourceManager.GetString("sqlQueryInsert", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a UPDATE Student SET name = @studentName WHERE StudentId = @studentId.
+        /// </summary>
+        internal static string sqlQueryUpdate {
+            get {
+                return ResourceManager.GetString("sqlQueryUpdate", resourceCulture);
+            }
+        }
     }
 }

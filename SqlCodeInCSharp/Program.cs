@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Data.SqlClient;
 using SqlCodeInCSharp.Properties;
 
@@ -10,23 +8,14 @@ namespace SqlCodeInCSharp
     {
         static void Main(string[] args)
         {
-            SqlConnection connection = new SqlConnection(Resources.sqlConnection);
-            try
-            {
-                connection.Open();
-                SqlCommand cmd = new SqlCommand(Resources.sqlQuery, connection);
-                SqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
-                {
-                    Console.WriteLine(reader["StudentId"] + ", "
-                        + reader["Name"] + ", " + reader["Surname"] + ", "
-                        + reader["Birthday"]);
-                }
-            }
-            finally
-            {
-                connection.Close();
-            }
+            Connection connection = new Connection();
+            connection.OpenConnection();
+            CommandSql command = new CommandSql(Resources.sqlQuery, connection);
+            ReaderSql reader = new ReaderSql(command);
+            string[] columns = { "StudentId", "Name", "Surname", "Birthday" };
+            string result = reader.ReadQuery(columns);
+            connection.CloseConnection();
+            Console.WriteLine(result);
             Console.ReadLine();
 
         }

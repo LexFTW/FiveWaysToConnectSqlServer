@@ -123,4 +123,7 @@
   <data name="sqlQuery" xml:space="preserve">
     <value>SELECT * FROM Student;</value>
   </data>
+  <data name="sqlQueryInsert" xml:space="preserve">
+    <value>INSERT Student (name, surname, birthday) VALUES(@studentName, @studentSurname, CURRENT_TIMESTAMP)</value>
+  </data>
 </root>

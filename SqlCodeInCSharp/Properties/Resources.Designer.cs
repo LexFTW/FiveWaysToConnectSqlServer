@@ -77,5 +77,14 @@ namespace SqlCodeInCSharp.Properties {
                 return ResourceManager.GetString("sqlQuery", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a INSERT Student (name, surname, birthday) VALUES(@studentName, @studentSurname, CURRENT_TIMESTAMP).
+        /// </summary>
+        internal static string sqlQueryInsert {
+            get {
+                return ResourceManager.GetString("sqlQueryInsert", resourceCulture);
+            }
+        }
     }
 }

@@ -104,5 +104,14 @@ namespace SqlCodeInCSharp.Properties {
                 return ResourceManager.GetString("sqlQueryUpdate", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a SelectAllStudent.
+        /// </summary>
+        internal static string sqlStoredProcedure {
+            get {
+                return ResourceManager.GetString("sqlStoredProcedure", resourceCulture);
+            }
+        }
     }
 }

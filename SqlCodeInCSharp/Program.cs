@@ -12,7 +12,21 @@ namespace SqlCodeInCSharp
             programObj.InsertExample();
             programObj.UpdateExample();
             programObj.DeleteExample();
-            programObj.SelectExample();
+            //programObj.SelectExample();
+            programObj.StoredProcedureExample();
+        }
+
+        private void StoredProcedureExample()
+        {
+            Connection connection = new Connection();
+            connection.OpenConnection();
+            CommandSql command = new CommandSql(Resources.sqlStoredProcedure, connection);
+            ReaderSql reader = new ReaderSql(command);
+            string[] columns = { "StudentId", "Name", "Surname", "Birthday" };
+            string result = reader.ReadQuery(columns);
+            connection.CloseConnection();
+            Console.WriteLine(result);
+            Console.ReadLine();
         }
 
         private void DeleteExample()

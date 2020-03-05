@@ -132,4 +132,7 @@
   <data name="sqlQueryUpdate" xml:space="preserve">
     <value>UPDATE Student SET name = @studentName WHERE StudentId = @studentId</value>
   </data>
+  <data name="sqlStoredProcedure" xml:space="preserve">
+    <value>SelectAllStudent</value>
+  </data>
 </root>
